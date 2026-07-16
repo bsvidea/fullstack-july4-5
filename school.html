@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: url(images/pattern1.jpg);
+        }
+        .category
+        {
+            width:20vw;
+            height:4vw;
+            margin:1vw;
+            padding:1vw;
+            display: inline-block;
+            background-color: antiquewhite;
+            text-align: center;
+            transition: transform .5s;
+            
+        }
+        .category:hover{
+            transform: scale(1.2);
+            border: 1px solid brown;
+            background-image: linear-gradient(antiquewhite,brown);
+        }
+        .myimage
+        {
+            display: block;
+            margin: 1vw;
+            border-radius: 2vw;
+            width: 70vw;
+            border:.5vw solid white;
+            margin-left:14vw;
+            transition: filter .5s, transform .5s;
+            
+        }
+        .myimage:hover{
+            filter: brightness(1.3);
+            animation: shake .5s infinite;
+        }
+        @keyframes shake {
+            0%{
+                transform: rotate(0deg);
+            }
+            25%{
+                transform: rotate(3deg);
+            }
+            50%{
+                transform: rotate(0deg);
+            }
+            75%{
+                transform: rotate(-3deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+            
+        }
+
+        .topbar
+        {
+            width: 100vw;
+            height: 3vw;
+            background-color: black;
+            color:white;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <marquee direction="right" scrolldelay="100" scrollamount="24" behavior="alternate">
+                Every action counts. Join thousands of compassionate people already making a difference.
+            </marquee>
+        </div>
+        <img class="myimage" src="images/laboratory-science-equipment.jpg">
+    </header>
+    <main>
+        <section>
+        <div class="container-fluid text-center">
+            <div class="category">
+                Food & Water
+            </div>
+            <div class="category">
+                Blood
+            </div>
+            <div class="category">
+                Medicine
+            </div>
+            <div class="category">
+                Shelter
+            </div>
+            <div class="category">
+                Elderly Care
+            </div>
+            <div class="category">
+                Child Welfare
+            </div>
+            <div class="category">
+                Disaster Relief
+            </div>
+            <div class="category">
+                Sanitation
+            </div>
+        </section>
+        <section>
+            <div>
+                Be the Change Tamil Nadu Needs
+Every action counts. Join thousands of compassionate people already making a difference.
+            </div>
+
+        </section>
+        <section>
+            <div class="container d-flex">
+                <div><img src="images/woman-2773007_1920-820px548px-20190402101315838.jpg"></div>
+                <div><img src="images/photo.jpg"></div>
+            </div>
+
+        </section>
+        <section>
+            <iframe width="872" height="490" src="https://www.youtube.com/embed/fW21hgNeTWI" title="The Most EPIC Extra Time Goals In FIFA World Cup History" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        </main>
+        <footer>
+            <div>
+                @All rights reserved.....2026
+            </div>
+        </footer>
+</body>
+</html>
