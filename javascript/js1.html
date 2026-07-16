@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #msg
+        {
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        .seatbox
+        {
+            width: 4vw;
+            height: 4vw;
+            border: 1px solid black;
+            display: inline-block;
+            font-size: 2em;
+            text-align: center;
+            line-height: 4vw;
+            border-radius: 2vw;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var old;
+        function setback(num)
+        {
+            var x=document.getElementById("seat"+num);
+            var arr=['cycle','scooter','auto','car','car'];
+            x.style.backgroundColor="red";
+            if(old!=null)
+            {
+                document.getElementById("seat"+old).style.backgroundColor="white";
+            }
+            old=num;
+            document.getElementById("msg").innerText=arr[num-1];
+        }
+    </script>
+</head>
+<body>
+    <div id="seat1" onclick="setback(1)" class="seatbox">1</div>
+    <div id="seat2" onclick="setback(2)" class="seatbox">2</div>
+    <div id="seat3" onclick="setback(3)" class="seatbox">3</div>
+    <div id="seat4" onclick="setback(4)" class="seatbox">4</div>
+    <div id="seat5" onclick="setback(5)" class="seatbox">5</div>
+    <p id="msg"></p>
+</body>
+</html>
