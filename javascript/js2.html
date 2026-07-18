@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .place
+        {
+            font-size: 2em;
+            padding: 1vw;
+            border: 1px solid black;
+            width: 20vw;
+            display: inline-block;
+            text-align: center;
+        }
+        .place1
+        {
+            background-color: chocolate;
+        }
+        .place2
+        {
+            background-color: darkolivegreen;
+        }
+        .swap
+        {
+            display: inline-block;
+            font-size: 2em;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function swapplace()
+        {
+            var x=document.getElementById("place1");
+            var y=document.getElementById("place2");
+            
+            var z=x.innerText;
+            x.innerText=y.innerText;
+            y.innerText=z;
+
+            if(x.classList.contains("place1"))
+            {
+                x.classList.remove("place1");
+                x.classList.add("place2");
+                y.classList.remove("place2");
+                y.classList.add("place1");
+
+            }
+            else
+            {
+                x.classList.remove("place2");
+                x.classList.add("place1");
+                y.classList.remove("place1");
+                y.classList.add("place2");
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div id="place1" class="place place1">CHENNAI</div>
+        <div class="swap" onclick="swapplace()">&#x21C6;</div>
+        <div id="place2" class="place place2">MADURAI</div>
+
+    </div>
+</body>
+</html>
