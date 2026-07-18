@@ -5,46 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #msg
-        {
-            font-weight: bold;
-            font-size: 1.3em;
-        }
-        .seatbox
+        .seats
         {
             width: 4vw;
             height: 4vw;
-            border: 1px solid black;
-            display: inline-block;
-            font-size: 2em;
+            background-color: cornsilk;
             text-align: center;
+            font-size: 2em;
+            display: inline-block;
+            border: 1px solid brown;
             line-height: 4vw;
-            border-radius: 2vw;
-            cursor: pointer;
+        }
+        #remark
+        {
+            font-size: 5em;
+            width: 10vw;
+            height: 10vw;
+            border: 1px solid black;
+            margin: auto;
+            border-radius: 5vw;
+            margin-top: 2vw;
+            display: none;
+            box-shadow: 0px 0px 3px black;
         }
     </style>
     <script>
-        var old;
-        function setback(num)
+        function show(num)
         {
-            var x=document.getElementById("seat"+num);
-            var arr=['cycle','scooter','auto','car','car'];
-            x.style.backgroundColor="red";
-            if(old!=null)
-            {
-                document.getElementById("seat"+old).style.backgroundColor="white";
-            }
-            old=num;
-            document.getElementById("msg").innerText=arr[num-1];
+            var x=document.getElementById("remark");
+            var arr=['&#x1F6B2;','&#x1F3CD;','&#x1F6FA;','&#x1F697;'];
+            x.innerHTML=arr[num-1];
+            x.style.display='block';
         }
     </script>
 </head>
 <body>
-    <div id="seat1" onclick="setback(1)" class="seatbox">1</div>
-    <div id="seat2" onclick="setback(2)" class="seatbox">2</div>
-    <div id="seat3" onclick="setback(3)" class="seatbox">3</div>
-    <div id="seat4" onclick="setback(4)" class="seatbox">4</div>
-    <div id="seat5" onclick="setback(5)" class="seatbox">5</div>
-    <p id="msg"></p>
-</body>
+    <div style="text-align: center;">
+        <div id="seat1" class="seats" onclick="show(1)">1</div>
+        <div id="seat2" class="seats" onclick="show(2)">2</div>
+        <div id="seat3" class="seats" onclick="show(3)">3</div>
+        <div id="seat4" class="seats" onclick="show(4)">4</div>
+        <div id="remark"></div>
+    </div>
+    </body>
 </html>
