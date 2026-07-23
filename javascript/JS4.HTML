@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        var dept={'UG':['Select Department','Commerce','Mathematics','Engineering'],
+            'PG':['Select Department','Commerce','Arts'],
+            'DIPLOMA':['Select Department','Electrical','Mechanical','Civil']
+        };
+        function updatedepartment()
+        {
+
+            var x=document.getElementById("qualification");
+            var y=x.value;
+            if(x.selectedIndex>0)
+            {
+                document.getElementById("department").innerHTML="";
+
+                var dp=dept[y];
+                for(i=0;i<dp.length;i++)
+                {
+                    var obj=document.createElement('option');
+                    obj.text=dp[i];
+                    document.getElementById("department").appendChild(obj);
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="container bg-primary p-2">
+        <h1>Registration Form</h1>
+        <div>
+            <label for="username" class="form-label text-light">Name of the Student</label>
+            <input type="text" name="username" class="form-control" id="username">
+        </div>
+        <div>
+            <label for="qualification" class="form-label text-light">Qualfication</label>
+            <select class="form-select" name="qualfication" id="qualification" onchange="updatedepartment()">
+                <option>Select Qualfication</option>
+                <option>UG</option>
+                <option>PG</option>
+                <option>DIPLOMA</option>
+            </select>
+        </div>
+        <div>
+            <label for="department" class="form-label text-light">Department</label>
+            <select class="form-select" name="department" id="department">
+                <option>Select Department</option>
+            </select>
+        </div>
+    </div>    
+</body>
+</html>
