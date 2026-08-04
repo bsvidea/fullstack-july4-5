@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+        #otp
+        {
+        font-size:1.4em;
+        }
+        #timertext
+        {
+            font-size: 2em;
+            color:red;
+            text-align: center;
+            display: none;
+        }
+        #code1
+        {
+            color:aqua;
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        var seconds=20;
+        var sid;
+        function showtimer()
+        {
+            sid=setInterval(updatetimer,1000);
+            document.getElementById("code1").style.display='none';
+            document.getElementById("timertext").style.display='block';
+            document.getElementById("timertext").innerText='0:'+seconds;
+        }
+        function updatetimer()
+        {
+            seconds--;
+            document.getElementById("timertext").innerText='0:'+seconds;
+            if(seconds==0)
+            {
+                clearInterval(sid);
+                document.getElementById("timertext").style.display='none';
+                document.getElementById("code1").style.display='block';
+                document.getElementById("code1").innerText="Resend Code";
+                seconds=20;
+                
+            }
+                
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 display-5 text-dark p-4   ">
+                User Login
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 bg-dark">
+                <label class="form-label text-light">Enter OTP</label>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 bg-dark" >
+                <input type="password" id="otp" class="form-control" >
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 bg-dark">
+                <span  id="timertext"></span>
+                <span  id="code1" onclick="showtimer()">Send Code</span>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 bg-dark text-center p-2">
+                <button class="btn btn-warning">Submit</button>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>    
+</body>
+</html>
